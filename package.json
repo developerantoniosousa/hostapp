@@ -9,11 +9,18 @@
     "start": "react-native start",
     "test": "jest"
   },
+  "zephyr:dependencies": {
+    "miniApp": "zephyr:miniApp"
+  },
   "dependencies": {
+    "@module-federation/metro": "^2.8.1",
+    "@module-federation/metro-plugin-rnc-cli": "^2.8.1",
+    "@module-federation/runtime": "^2.8.1",
+    "@react-native/new-app-screen": "0.86.2",
     "react": "19.2.3",
     "react-native": "0.86.2",
-    "@react-native/new-app-screen": "0.86.2",
-    "react-native-safe-area-context": "^5.5.2"
+    "react-native-safe-area-context": "^5.5.2",
+    "zephyr-metro-plugin": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

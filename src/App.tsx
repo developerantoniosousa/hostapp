@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import MiniAppErrorBoundary from './components/MiniAppErrorBoundary';
 
 const MiniAppComponent = React.lazy(() => import('miniApp/example'));
 
@@ -20,9 +21,13 @@ export default function App() {
 
       <View style={styles.content}>
         <Text style={styles.title}>Host Application</Text>
-        <Suspense fallback={<ActivityIndicator size="large" color="#0000ff" />}>
-          <MiniAppComponent />
-        </Suspense>
+        <MiniAppErrorBoundary>
+          <Suspense
+            fallback={<ActivityIndicator size="large" color="#0000ff" />}
+          >
+            <MiniAppComponent />
+          </Suspense>
+        </MiniAppErrorBoundary>
       </View>
     </SafeAreaView>
   );
